@@ -8,17 +8,31 @@ export default function LandingPageBody(props: any) {
     <main>
       <section className="home">
         <div className="home-item-container">
-          <div
+          {/* <div
             onClick={() => {
               props.setCategorySelected("Furniture");
               props.setPage("CategoriesPage");
               scrollToTopFast();
             }}
             className="home-live-comfortably"
-          >
+          > */}
+          <div className="home-text-container">
+            <h1>LiveComfortably</h1>
             <h2>Live Comfortably</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Quasi placeat, odit
+              quia non nihil facere quo hic corrupti ab blanditiis? Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Repudiandae ipsa
+              provident architecto voluptatibus necessitatibus eius deleniti
+              accusantium accusamus aliquid optio.
+            </p>
+            <p>Live Comfortably</p>
           </div>
-          <div
+
+          <img src="public/assets/home-office-vector.svg" alt="" />
+          {/* </div> */}
+          {/* <div
             onClick={() => {
               props.setCategorySelected("Skin Care");
               props.setPage("CategoriesPage");
@@ -47,7 +61,7 @@ export default function LandingPageBody(props: any) {
             className="home-electronics"
           >
             <h2>Electronics</h2>
-          </div>
+          </div> */}
         </div>
       </section>
 

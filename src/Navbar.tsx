@@ -75,15 +75,6 @@ export default function Navbar(props: any) {
                 <GiHamburgerMenu />
               </button>
             )}
-            {/* <button
-              onClick={() => {
-                props.setPage("LandingPage");
-                scrollToTopFast();
-              }}
-              className="nav-button-left"
-            >
-              <div className="nav-logo">MIN</div>
-            </button> */}
           </div>
 
           {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
@@ -105,35 +96,6 @@ export default function Navbar(props: any) {
           {/* RIGHT NAV SECTION */}
           {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
           <div className="nav-right">
-            {/* {screenWidth > 700 ? (
-              <>
-                <button
-                  onClick={() => {
-                    props.setPage("CategoriesPage");
-                    scrollToTopFast();
-                  }}
-                  className="nav-buttons"
-                >
-                  CATEGORIES
-                </button>
-                <button
-                  onClick={() => {
-                    props.setPage("ProductPage");
-                    scrollToTopFast();
-                  }}
-                  className="nav-buttons"
-                >
-                  PRODUCT PAGE
-                </button>
-              </>
-            ) : (
-              <button
-                onClick={() => setHamburgerMenuActive(!hamburgerMenuActive)}
-                className="nav-buttons"
-              >
-                <GiHamburgerMenu />
-              </button>
-            )} */}
             <div className={screenWidth > 700 ? "right-nav-filler" : ""}></div>
             <button
               className={`nav-buttons shopping-cart-icon`}
@@ -162,28 +124,32 @@ export default function Navbar(props: any) {
         className={hamburgerMenuActive ? "hamburger-menu" : ""}
         style={hamburgerMenuStyle}
       >
-        <>
-          <button
-            onClick={() => {
-              setHamburgerMenuActive(false);
-              props.setPage("CategoriesPage");
-              scrollToTopFast();
-            }}
-            className="nav-buttons"
-          >
-            CATEGORIES
-          </button>
-          <button
-            onClick={() => {
-              setHamburgerMenuActive(false);
-              props.setPage("ProductPage");
-              scrollToTopFast();
-            }}
-            className="nav-buttons"
-          >
-            FAQs
-          </button>
-        </>
+        {hamburgerMenuActive ? (
+          <>
+            <button
+              onClick={() => {
+                setHamburgerMenuActive(false);
+                props.setPage("CategoriesPage");
+                scrollToTopFast();
+              }}
+              className="nav-buttons"
+            >
+              CATEGORIES
+            </button>
+            <button
+              onClick={() => {
+                setHamburgerMenuActive(false);
+                props.setPage("ProductPage");
+                scrollToTopFast();
+              }}
+              className="nav-buttons"
+            >
+              FAQs
+            </button>
+          </>
+        ) : (
+          <></>
+        )}
       </div>
     </>
   );
